@@ -1,0 +1,37 @@
+{
+    "metrics": [
+      {
+        "id": "sales",
+        "name": "Sales Data",
+        "type": "bar",
+        "data": [
+          { "name": "Q1", "value": 30000 },
+          { "name": "Q2", "value": 45000 },
+          { "name": "Q3", "value": 60000 },
+          { "name": "Q4", "value": 75000 }
+        ]
+      },
+      {
+        "id": "engagement",
+        "name": "User Engagement",
+        "type": "line",
+        "data": [
+          { "name": "Jan", "value": 100 },
+          { "name": "Feb", "value": 150 },
+          { "name": "Mar", "value": 200 },
+          { "name": "Apr", "value": 180 }
+        ]
+      },
+      {
+        "id": "performance",
+        "name": "Performance Stats",
+        "type": "pie",
+        "data": [
+          { "name": "CPU", "value": 40 },
+          { "name": "Memory", "value": 30 },
+          { "name": "Disk", "value": 20 },
+          { "name": "Network", "value": 10 }
+        ]
+      }
+    ]
+  }

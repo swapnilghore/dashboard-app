@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { DashboardComponent } from "./dashboard/dashboard/dashboard.component";
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatToolbarModule],
+  standalone: true,
+  imports: [CommonModule, MatToolbarModule, DashboardComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'dashboard-app';
-}
+export class AppComponent {}
+
+

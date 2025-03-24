@@ -1,7 +1,8 @@
-import { Visualization } from './visualization';
+import { VisualizationOptions } from './visualization';
 
-describe('Visualization', () => {
-  it('should create an instance', () => {
-    expect(new Visualization()).toBeTruthy();
+describe('VisualizationOptions Interface', () => {
+  it('should create a valid visualization object', () => {
+    const options: VisualizationOptions = { colorScheme: 'vivid', scale: 1 };
+    expect(options).toBeTruthy();
   });
 });

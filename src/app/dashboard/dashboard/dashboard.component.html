@@ -1,39 +1,35 @@
 <div class="dashboard-container">
-    <mat-form-field appearance="fill">
-      <mat-label>Select Metric</mat-label>
-      <mat-select (selectionChange)="onMetricChange($event.value)">
-        <mat-option *ngFor="let metric of (metrics$ | async)" [value]="metric.id">
-          {{ metric.name }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  
-    <mat-form-field appearance="fill">
-      <mat-label>Color Scheme</mat-label>
-      <mat-select (selectionChange)="onColorChange($event.value)">
-        <mat-option value="vivid">Vivid</mat-option>
-        <mat-option value="natural">Natural</mat-option>
-        <mat-option value="cool">Cool</mat-option>
-      </mat-select>
-    </mat-form-field>
-  
-    <div class="visualization">
-      <ng-container *ngIf="selectedMetric$ | async as metric">
-        <app-bar-chart
-          *ngIf="metric.type === 'bar'"
-          [data]="metric.data"
-          [colorScheme]="(visualizationOptions$ | async)?.colorScheme"
-        ></app-bar-chart>
-        <app-line-chart
-          *ngIf="metric.type === 'line'"
-          [data]="metric.data"
-          [colorScheme]="(visualizationOptions$ | async)?.colorScheme"
-        ></app-line-chart>
-        <app-pie-chart
-          *ngIf="metric.type === 'pie'"
-          [data]="metric.data"
-          [colorScheme]="(visualizationOptions$ | async)?.colorScheme"
-        ></app-pie-chart>
-      </ng-container>
-    </div>
+  <mat-form-field appearance="fill">
+    <mat-label>Select Metric</mat-label>
+    <mat-select (selectionChange)="onMetricChange($event.value)">
+      <mat-option *ngFor="let metric of (metrics$ | async)" [value]="metric?.id">
+        {{ metric?.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Color Scheme</mat-label>
+    <mat-select (selectionChange)="onColorChange($event.value)">
+      <mat-option value="vivid">Vivid</mat-option>
+      <mat-option value="natural">Natural</mat-option>
+      <mat-option value="cool">Cool</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  @if (showmatrixData) {
+  <div class="visualization">
+    <ng-container *ngIf="selectedMetric$ | async as selectedMetric">
+      <app-bar-chart *ngIf="selectedMetric.type === 'bar'" [data]="selectedMetric.data"
+        [colorScheme]="(visualizationOptions$ | async)?.colorScheme ?? 'vivid'"></app-bar-chart>
+
+      <app-line-chart *ngIf="selectedMetric.type === 'line'" [data]="selectedMetric.data"
+        [colorScheme]="(visualizationOptions$ | async)?.colorScheme ?? 'vivid'"></app-line-chart>
+
+      <app-pie-chart *ngIf="selectedMetric.type === 'pie'" [data]="selectedMetric.data"
+        [colorScheme]="(visualizationOptions$ | async)?.colorScheme ?? 'vivid'"></app-pie-chart>
+    </ng-container>
   </div>
+  }
+
+</div>

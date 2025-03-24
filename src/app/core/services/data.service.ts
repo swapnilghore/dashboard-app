@@ -9,6 +9,8 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
   getMetrics(): Observable<{ metrics: Metric[] }> {
-    return this.http.get<{ metrics: Metric[] }>('/assets/mock-data.json');
+    console.log('Fetching metrics from mock-data.json...');
+    return this.http.get<{ metrics: Metric[] }>('/mock-data.json');
   }
 }
+

@@ -68,7 +68,26 @@ For more information on using the Angular CLI, including detailed command refere
 
 
 ## Performance Stats
-![image](https://github.com/user-attachments/assets/84ca8f54-730b-4cca-8fd0-941135866a9e)
+![image](https://github.com/user-attachments/assets/84ca8f54-730b-4cca-8fd0-941135866a9e) 
+
+
+Technologies Used
+Angular: Frontend framework (v16+)
+NgRx: State management library
+Angular Material: UI components
+ngx-charts: Charting library for visualizations
+TypeScript: Static typing
+SCSS: Styling
+Usage
+Select a Metric: Use the dropdown menu to choose a metric (e.g., Sales Data, User Engagement, Performance Stats).
+Customize Visualization: Adjust the color scheme using the second dropdown.
+View Results: The dashboard dynamically renders the appropriate chart (bar, line, or pie) based on your selection.
+Example Data
+The mock data is stored in src/assets/mock-data.json and includes:
+
+Sales Data: Bar chart with quarterly sales.
+User Engagement: Line chart with monthly engagement.
+Performance Stats: Pie chart with resource usage.
 
 
 
